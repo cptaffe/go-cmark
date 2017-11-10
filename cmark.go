@@ -139,7 +139,6 @@ func (n Node) Type() (NodeType, error) {
 func (n Node) TypeString() string {
 	str := C.cmark_node_get_type_string(n.node)
 	gstr := C.GoString(str)
-	C.free(unsafe.Pointer(str))
 	return gstr
 }
 
